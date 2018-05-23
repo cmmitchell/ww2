@@ -80,7 +80,27 @@
 			//============================================
 			
 			
-			
+				function AllianceColor(a) {
+					return a === 'Neutral' ? "#949494":
+							a === 'Axis' ? "#690001":
+							a === 'Axis-occupied' ? "#84000f":
+							a === 'Axis Protectorate' ? "#a4000a":
+							a === 'Axis-aligned' ? "#9f2123":
+							a === 'Comintern' ? "#110040":
+							a === 'Allies' ? "#402ea5":
+							"#d1d1d1";
+
+				}
+
+				function countryww2(feature){
+					return {
+						fillColor: AllianceColor(feature.properties.group),
+						weight: 25, fillOpacity: 1,
+						color: AllianceColor(feature.properties.group), weight: 1.25, opacity: 1
+					};
+
+
+				}
 				var a = L.geoJson(bak, {
 					style: back})
 					a1 = L.geoJson(bak, {
