@@ -109,6 +109,17 @@
 					a1 = L.geoJson(bak, {
 					style: backblack})
 				
+					b39 = L.geoJson(1939, {
+					style: countryww2})
+					
+					b40 = L.geoJson(1940, {
+					style: countryww2})
+					
+					b41 = L.geoJson(1941, {
+					style: countryww2})
+					
+					
+				
 					c = L.geoJson(World_simp, {
 					style: World_S,
 					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
@@ -159,6 +170,9 @@
 					//=================background=================
 				var aShp = L.layerGroup([a]),
 					a1Shp = L.layerGroup([a1]),
+				    	b39Shp = L.layerGroup([b39, a]),
+				    	b40Shp = L.layerGroup([b40, a]),
+				    	b41Shp = L.layerGroup([b41, a]),
 				    	cShp = L.layerGroup([c, a]),
 				    	
 					
@@ -200,6 +214,9 @@
 
 					"Water Background": aShp,
 					"Black Background": a1Shp,
+					"1939": b39Shp,
+					"1940": b40Shp,
+					"1941": b41Shp,
 					"Country (Modern)": cShp,
 				};
 				
