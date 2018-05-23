@@ -86,6 +86,13 @@
 					a1 = L.geoJson(bak, {
 					style: backblack})
 				
+					c = L.geoJson(World_simp, {
+					style: World_S,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Country:</b> " + feature.properties.CNTRY_NAME,popupOptions);
+										}
+					})
+				
 					//===========================================
 
 	//this is a seperating line ----------------------------------------------------------------------------------
@@ -129,6 +136,17 @@
 					//=================background=================
 				var aShp = L.layerGroup([a]),
 					a1Shp = L.layerGroup([a1]),
+				    	cShp = L.layerGroup([c]),
+				    	
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					//=================country=================
 
 				    
@@ -159,6 +177,7 @@
 
 					"Water Background": aShp,
 					"Black Background": a1Shp,
+					"Country": cShp,
 				};
 				
 				//create overlays variable to call within the control. Calls layer groups
