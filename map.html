@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>WW2 Map [v0.0.27] </title>
+		<title>WW2 Map [v0.0.29] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -91,6 +91,7 @@
 							a === 'Axis-aligned' ? "#9f2123":
 							a === 'Comintern' ? "#110040":
 							a === 'Allies' ? "#402ea5":
+							a === 'Allies-aligned' ? "#402ea5":
 							"#d1d1d1";
 
 				}
@@ -272,7 +273,66 @@
 
 				
 
-			
+		//this is a seperating line ----------------------------------------------------------------------------------
+
+				
+				var legend2 = L.control({position: 'bottomright'});
+				legend2.onAdd = function (map) {	
+				var div = L.DomUtil.create('div', 'info legend'),
+					labels = ['<strong>Region</strong>'],
+					categories = ['Axis', 'Axis-occupied', 'Axis Protectorate', 'Axis-aligned', 'Comintern', 'Allies', 'Allies-occupied', 'Other'];
+					
+
+					for (var i = 0; i < categories.length; i++) {
+
+					    div.innerHTML += 
+					    labels.push(
+						'<QS style="background:' + AllianceColor(categories[i]) + '"></QS> ' +
+					    (categories[i] ? categories[i] : '+'));
+
+					}
+					div.innerHTML = labels.join('<br>');
+				    return div;
+				    };
+
+		//this is a seperating line ----------------------------------------------------------------------------------
+				
+				map.on('overlayadd', function(eventLayer){
+				    if (eventLayer.name === '1939'){
+					map.addControl(legend2);
+				    } else if (eventLayer.name === '1940'){
+					map.addControl(legend2);
+				    } else if (eventLayer.name === '1941'){
+					map.addControl(legend2);
+				    } else if (eventLayer.name === '1942'){
+					map.addControl(legend2);
+				    } else if (eventLayer.name === '1943'){
+					map.addControl(legend2);
+				    } else if (eventLayer.name === '1944'){
+					map.addControl(legend2);
+				    }else if (eventLayer.name === '1945'){
+					map.addControl(legend2);
+				    }
+				});
+
+				map.on('overlayremove', function(eventLayer){
+
+				    if (eventLayer.name === '1939'){
+					map.removeControl(legend2);
+				    } else if (eventLayer.name === '1940'){
+					map.removeControl(legend2);
+				    } else if (eventLayer.name === '1941'){
+					map.removeControl(legend2);;
+				    } else if (eventLayer.name === '1942'){
+					map.removeControl(legend2);
+				    } else if (eventLayer.name === '1943'){
+					map.removeControl(legend2);
+				    } else if (eventLayer.name === '1944'){
+					map.removeControl(legend2);
+				    } else if (eventLayer.name === '1945'){
+					map.removeControl(legend2);
+				    } 
+				});
 			
 			</script>
 			
