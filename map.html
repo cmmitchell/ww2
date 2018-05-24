@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>WW2 Map [v0.0.3] </title>
+		<title>WW2 Map [v0.0.3d] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -231,7 +231,8 @@
 				var map = L.map('map', {
 					layers: [aShp],
 					zoomDelta: 0.15,
-					zoomSnap: 0
+					zoomSnap: 0,
+					attribution: 'Data by source',
 					}).setView([0, 0], 4.5);
 					
        				//	}).setView([7.1328, -3.6559], 9.5);	
