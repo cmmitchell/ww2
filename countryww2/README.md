@@ -1,1 +1,1 @@
-this is a textfile
+Thiis is the data for the countries and stuff
