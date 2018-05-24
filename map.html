@@ -87,7 +87,7 @@
 			//============================================
 			
 			
-				function AllianceColor(a) {
+				function AllianceColors(a) {
 					return a === 'Neutral' ? "#949494":
 							a === 'Axis' ? "#690001":
 							a === 'Axis-occupied' ? "#84000f":
@@ -102,9 +102,9 @@
 
 				function countryww2(feature){
 					return {
-						fillColor: AllianceColor(feature.properties.group),
+						fillColor: AllianceColors(feature.properties.group),
 						weight: 25, fillOpacity: 1,
-						color: AllianceColor(feature.properties.group), weight: 1.25, opacity: 1
+						color: AllianceColors(feature.properties.group), weight: 1.25, opacity: 1
 					};
 
 
@@ -292,7 +292,7 @@
 
 					    div.innerHTML += 
 					    labels.push(
-						'<QS style="background:' + AllianceColor(categories[i]) + '"></QS> ' +
+						'<QS style="background:' + AllianceColors(categories[i]) + '"></QS> ' +
 					    (categories[i] ? categories[i] : '+'));
 
 					}
