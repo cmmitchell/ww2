@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>WW2 Map [v0.0.26] </title>
+		<title>WW2 Map [v0.0.27] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -118,6 +118,23 @@
 					b41 = L.geoJson(a1941, {
 					style: countryww2})
 					
+					b42 = L.geoJson(a1942, {
+					style: countryww2})
+					
+					b43 = L.geoJson(a1943, {
+					style: countryww2})
+					
+					b44 = L.geoJson(a1944, {
+					style: countryww2})
+					
+					b45 = L.geoJson(a1945, {
+					style: countryww2})
+					
+					
+					
+					
+					
+				
 					
 				
 					c = L.geoJson(World_simp, {
@@ -170,9 +187,18 @@
 					//=================background=================
 				var aShp = L.layerGroup([a]),
 					a1Shp = L.layerGroup([a1]),
-				    	b39Shp = L.layerGroup([b39, a]),
-				    	b40Shp = L.layerGroup([b40, a]),
-				    	b41Shp = L.layerGroup([b41, a]),
+				    	b39Shp = L.layerGroup([b39]),
+				    	b40Shp = L.layerGroup([b40]),
+				    	b41Shp = L.layerGroup([b41]),
+				    	b42Shp = L.layerGroup([b42]),
+					b43Shp = L.layerGroup([b43]),
+					b44Shp = L.layerGroup([b44]),
+					b45Shp = L.layerGroup([b45]),
+					
+					
+					
+					
+					
 				    	cShp = L.layerGroup([c, a]),
 				    	
 					
@@ -214,15 +240,19 @@
 
 					"Water Background": aShp,
 					"Black Background": a1Shp,
-					"1939": b39Shp,
-					"1940": b40Shp,
-					"1941": b41Shp,
+					
 					"Country (Modern)": cShp,
 				};
 				
 				//create overlays variable to call within the control. Calls layer groups
 				var overLays = {					
-					
+					"1939": b39Shp,
+					"1940": b40Shp,
+					"1941": b41Shp,
+					"1942": b42Shp,
+					"1943": b43Shp,
+					"1944": b44Shp,
+					"1945": b45Shp,
 					// 経度緯度
 					"Graticules 30":kShp,
 					"Graticules 5":k5Shp,
